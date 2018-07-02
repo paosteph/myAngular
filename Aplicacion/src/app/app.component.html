@@ -1,0 +1,70 @@
+<!--div class="container">
+
+<h1>directivas</h1>
+
+  <h2>NgIf</h2>
+  <p>hola</p>
+
+  <p *ngIf="mostrar" gIf>Mundo</p>
+
+  <h2>NgFor</h2>
+
+  <p>Primer arreglo {{arregloNumeros[0]}}</p>
+
+  <ul>
+    <li *ngFor="let numero of arregloNumeros; let indice = index">
+      {{indice + 1}}.- Mi numero es {{numero}}
+    </li>
+  </ul>
+
+
+  <h1>Interpolacion</h1>
+
+  <p>soy {{nombre + ' '+ apellido}}</p>
+
+  <p>2+2 es {{2+2}}</p>
+
+  <h2>Data Bindings</h2>
+  <h3>Property binding [proper]</h3>
+
+  <img [src]="'assets/'+nombreImagen" [width]="anchoImagen"  alt="">
+
+  <h2>Evento Binding (event)</h2>
+
+  <button (click)="aumentarTmanio()" >aumntar tamaño</button>
+
+  <h1 (mouseover)="cambiarTmanioImagen(-50)">Reducir tamaño</h1>
+</div-->
+
+<div class="row">
+  <div class="col-sm-12">
+    <app-titulo
+      [titulo]="titulo">
+    </app-titulo>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-2" *ngFor="let perfil of perfiles">
+    <app-perfil
+      [nombre]="perfil.nombrePerfil"
+      [urlImagen]="'assets/imagenes/'+perfil.nombreImagen"
+    >
+
+    </app-perfil>
+  </div>
+  <div class="col-sm-1"></div>
+</div>
+
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <app-boton
+      [nombreBoton]="nombreBoton"
+      (dioclick)="irAAdministrarPerfiles()"
+    >
+    </app-boton>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
