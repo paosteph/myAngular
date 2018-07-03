@@ -17,6 +17,7 @@ export class BotonComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    //this.nombreBoton = this.nombreBoton.toUpperCase();
   }
 
   ejecutarEvento(){

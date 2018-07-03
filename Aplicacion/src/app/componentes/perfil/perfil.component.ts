@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-perfil',
@@ -6,13 +6,22 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent implements OnInit {
-
+  //propiedades
   @Input() nombre: string;
   @Input() urlImagen: string;
+  //Eventos
+  @Output() seleccionoCuenta: EventEmitter<string> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
   }
+
+
+  ejecutarDioClick(){
+    this.seleccionoCuenta.emit(this.nombre);
+  }
+
+
 
 }

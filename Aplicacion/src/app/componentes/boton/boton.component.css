@@ -1,0 +1,16 @@
+.boton{
+  color: #3b3b3b;
+  border-color: #3b3b3b;
+  border-style: solid;
+  border-width: 2px;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.boton:hover{
+  color: #b7b7b7;
+  border-color: #b7b7b7;
+
+}
+

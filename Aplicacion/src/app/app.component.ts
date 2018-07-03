@@ -58,4 +58,8 @@ export class AppComponent {
   irAAdministrarPerfiles(){
     console.log('administrando')
   }
+
+  irACuenta(nombreCuenta: string){
+    console.log('ir a cuenta', nombreCuenta);
+  }
 }

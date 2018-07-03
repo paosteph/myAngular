@@ -46,14 +46,16 @@
 
 <div class="row">
   <div class="col-sm-1"></div>
-  <div class="col-sm-2" *ngFor="let perfil of perfiles">
+  <div class="col-sm-2"
+       *ngFor="let perfil of perfiles">
     <app-perfil
       [nombre]="perfil.nombrePerfil"
       [urlImagen]="'assets/imagenes/'+perfil.nombreImagen"
+      (seleccionoCuenta)="irACuenta($event)"
     >
-
     </app-perfil>
   </div>
+
   <div class="col-sm-1"></div>
 </div>
 
@@ -68,3 +70,4 @@
   </div>
   <div class="col-sm-4"></div>
 </div>
+
