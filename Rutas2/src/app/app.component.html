@@ -9,7 +9,13 @@
 
   <ul>
     <li>
-      <a [routerLink]=""></a>
+      <a [routerLink]="['/home']">Home</a>
+    </li>
+    <li>
+      <a [routerLink]="['/FAQ']">FAQ</a>
+    </li>
+    <li>
+      <a [routerLink]="['/404']">No encontrado</a>
     </li>
   </ul>
 
@@ -19,7 +25,7 @@
 
 </div>
 
-<button class="boton">boton</button>
+<button class="boton" (click)="irAPerfilDeUsuario()">boton</button>
 
 <h1 class="texto">Footer</h1>
 
