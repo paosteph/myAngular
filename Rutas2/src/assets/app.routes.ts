@@ -15,7 +15,7 @@ export const ARREGLO_RUTAS: Routes = [
         component: RutaPerfilComponent
       },
       {
-        path: 'usuario/:usuaurioId',
+        path: 'usuario/:usuarioId/u/:universidadId',
         component: RutaUsuarioComponent
       },
       {

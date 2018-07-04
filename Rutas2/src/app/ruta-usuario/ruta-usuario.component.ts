@@ -12,6 +12,19 @@ export class RutaUsuarioComponent implements OnInit {
 
   ngOnInit() {
     const observableParametrosRutas$ = this._activatedRoute.params;
+
+    observableParametrosRutas$.subscribe(
+      (respuestaOK)=>{
+        console.log(respuestaOK);
+      },
+      (respuestError)=>{
+
+      },
+      ()=>{
+        //completa
+      }
+    )
+
   }
 
 }

@@ -9,6 +9,7 @@ import {RouterModule} from "@angular/router";
 import {ARREGLO_RUTAS} from "../assets/app.routes";
 import { RutaPerfilComponent } from './ruta-perfil/ruta-perfil.component';
 import { RutaUsuarioComponent } from './ruta-usuario/ruta-usuario.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { RutaUsuarioComponent } from './ruta-usuario/ruta-usuario.component';
       {
         useHash: true
       }
-    )
+    ),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
