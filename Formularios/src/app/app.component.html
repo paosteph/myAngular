@@ -1,0 +1,82 @@
+<div class="container">
+  <h1 >variable template #</h1>
+  <form
+    (ngSubmit)="crearUsuario(formularioUsuario)"
+    #formularioUsuario="ngForm">
+    <h4>Estados del formulario</h4>
+    <pre>
+      valid: {{formularioUsuario.valid}}
+      invalid: {{formularioUsuario.invalid}}
+      dirty: {{formularioUsuario.dirty}}
+      pristine: {{formularioUsuario.pristine}}
+      touched: {{formularioUsuario.touched}}
+      untouched: {{formularioUsuario.untouched}}
+    </pre>
+    <h4>Errores del formulario</h4>
+    <pre>
+      errores: {{formularioUsuario.errors}}
+    </pre>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"
+
+        [(ngModel)]="email"
+        name="email"
+          required
+          minlength="3"
+             pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
+        #emailCampo="ngModel"
+      >
+      <h4>Estados del campo</h4>
+      <pre>
+      valid: {{emailCampo.valid}}
+      invalid: {{emailCampo.invalid}}
+      dirty: {{emailCampo.dirty}}
+      pristine: {{emailCampo.pristine}}
+      touched: {{emailCampo.touched}}
+      untouched: {{emailCampo.untouched}}
+    </pre>
+      <h4>Errores del campo</h4>
+      <pre>
+      errores: {{emailCampo.errors | json}}
+    </pre>
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+      <div
+        class="alert alert-warning"
+        role="alert"
+        *ngIf="emailCampo.errors !== null && emailCampo.dirty === true">
+
+        <p *ngIf="emailCampo.errors.required">Este campo es requerido</p>
+        <p *ngIf="emailCampo.errors.minlength"> No puede tener menos de 3 caracters</p>
+        <p *ngIf="emailCampo.errors.pattern">Debe ser valido</p>
+
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+             [(ngModel)]="password"
+             name="password"
+             required
+             #passwordCampo="ngModel"
+      >
+    </div>
+
+    <div *ngIf="passwordCampo.valid" class="form-group">
+      <label for="exampleInputPassword2">Password Confirmation</label>
+      <input type="password" class="form-control" id="exampleInputPassword2" placeholder="passwordConfirmation"
+             [(ngModel)]="passwordConfirmation"
+             name="passwordConfirmation"
+             required
+             #passwordConfirmationCampo="ngModel"
+      >
+    </div>
+
+
+
+    <button [disabled]="formularioUsuario.invalid"
+            type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
